@@ -42,7 +42,7 @@
       this.hsBtn = new System.Windows.Forms.Button();
       this.pvBt = new System.Windows.Forms.Button();
       this.echBtn = new System.Windows.Forms.Button();
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.titleBarPanel = new System.Windows.Forms.Panel();
       this.closeButton = new System.Windows.Forms.Button();
       this.rightPanel = new System.Windows.Forms.Panel();
       this.newTripPanel = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
       this.viewReportButton = new System.Windows.Forms.Button();
       this.newTripButton = new System.Windows.Forms.Button();
       this.settingsButton = new System.Windows.Forms.Button();
-      this.panel1.SuspendLayout();
+      this.titleBarPanel.SuspendLayout();
       this.rightPanel.SuspendLayout();
       this.newTripPanel.SuspendLayout();
       this.ReportPanel.SuspendLayout();
@@ -217,16 +217,16 @@
       this.echBtn.UseVisualStyleBackColor = true;
       this.echBtn.Click += new System.EventHandler(this.mileageForm_Click);
       // 
-      // panel1
+      // titleBarPanel
       // 
-      this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-      this.panel1.Controls.Add(this.closeButton);
-      this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panel1.Location = new System.Drawing.Point(0, 0);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(705, 30);
-      this.panel1.TabIndex = 17;
-      this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+      this.titleBarPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+      this.titleBarPanel.Controls.Add(this.closeButton);
+      this.titleBarPanel.Dock = System.Windows.Forms.DockStyle.Top;
+      this.titleBarPanel.Location = new System.Drawing.Point(0, 0);
+      this.titleBarPanel.Name = "titleBarPanel";
+      this.titleBarPanel.Size = new System.Drawing.Size(705, 30);
+      this.titleBarPanel.TabIndex = 17;
+      this.titleBarPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
       // 
       // closeButton
       // 
@@ -394,11 +394,11 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(705, 367);
       this.Controls.Add(this.rightPanel);
-      this.Controls.Add(this.panel1);
+      this.Controls.Add(this.titleBarPanel);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Name = "mileageForm";
       this.Text = "Mileage";
-      this.panel1.ResumeLayout(false);
+      this.titleBarPanel.ResumeLayout(false);
       this.rightPanel.ResumeLayout(false);
       this.newTripPanel.ResumeLayout(false);
       this.ReportPanel.ResumeLayout(false);
@@ -423,7 +423,7 @@
     private System.Windows.Forms.Button hsBtn;
     private System.Windows.Forms.Button pvBt;
     private System.Windows.Forms.Button echBtn;
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel titleBarPanel;
     private System.Windows.Forms.Button closeButton;
     private System.Windows.Forms.Panel rightPanel;
     private System.Windows.Forms.Panel newTripPanel;
