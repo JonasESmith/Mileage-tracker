@@ -59,3 +59,17 @@ K:\Project_18\Mileage\Mileage\obj\Debug\Mileage.csproj.GenerateResource.Cache
 K:\Project_18\Mileage\Mileage\obj\Debug\Mileage.csproj.CoreCompileInputs.cache
 K:\Project_18\Mileage\Mileage\obj\Debug\Mileage.exe
 K:\Project_18\Mileage\Mileage\obj\Debug\Mileage.pdb
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\bin\Debug\Mileage.exe.config
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\bin\Debug\Mileage.exe
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\bin\Debug\Mileage.pdb
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\bin\Debug\MetroFramework.Design.dll
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\bin\Debug\MetroFramework.dll
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.csprojResolveAssemblyReference.cache
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.mileageForm.resources
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.Properties.Resources.resources
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.Settings.resources
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.csproj.GenerateResource.Cache
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.csproj.CoreCompileInputs.cache
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.exe
+C:\Users\smithjon\Desktop\projects\Mileage-tracker\Mileage\Mileage\obj\Debug\Mileage.pdb

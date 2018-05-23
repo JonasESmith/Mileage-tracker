@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.Linq;
 using System.IO;
 using System;
+using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace Mileage
 {
@@ -34,6 +36,13 @@ namespace Mileage
     public mileageForm()
     {
       InitializeComponent();
+      LoadStyles();
+    }
+
+    public void LoadStyles()
+    {
+      closeButton.BackColor = Color.FromArgb(244, 83, 66);
+      closeButton.FlatAppearance.BorderColor = Color.FromArgb(244, 83, 66);
     }
 
     #region Button Events & Calculations
@@ -130,7 +139,6 @@ namespace Mileage
       destinationList.Clear();
       enableBtns(true);
       tripList.Add(new Trip());
-      saveLabel.Text = "";
     }
 
     private void endButton_Click(object sender, EventArgs e)
@@ -290,9 +298,6 @@ namespace Mileage
         tripList.Clear();
         sw.Close();
       }
-
-      saveLabel.Text = "Saved!";
-
     }
 
     private void viewReportToolStripMenuItem_Click(object sender, EventArgs e)
@@ -322,6 +327,49 @@ namespace Mileage
     {
       Settings setting = new Settings();
       setting.Show();
+    }
+
+    private void mileageForm_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    public const int WM_NCLBUTTONDOWN = 0xA1;
+    public const int HT_CAPTION = 0x2;
+
+    [DllImportAttribute("user32.dll")]
+    public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+    [DllImportAttribute("user32.dll")]
+    public static extern bool ReleaseCapture();
+
+    private void panel1_MouseMove(object sender, MouseEventArgs e)
+    {
+      if (e.Button == MouseButtons.Left)
+      {
+        ReleaseCapture();
+        SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+      }
+    }
+
+    private void closeButton_Click(object sender, EventArgs e)
+    {
+      Application.Exit();
+    }
+
+    private void newTripButton_Click(object sender, EventArgs e)
+    {
+      newTripPanel.Visible = true;
+      ReportPanel.Visible = false;
+      newTripPanel.Dock = DockStyle.Fill;
+    }
+
+    private void viewReportButton_Click(object sender, EventArgs e)
+    {
+      newTripPanel.Visible = false;
+      ReportPanel.Visible = true;
+      ReportPanel.Dock = DockStyle.Fill;
+
+      reportBox.Text = File.ReadAllText(Properties.Settings.Default.savePath);
     }
   }
   #region Trip-Class
