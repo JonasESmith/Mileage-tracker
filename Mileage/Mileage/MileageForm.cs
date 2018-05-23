@@ -247,6 +247,72 @@ namespace Mileage
 
     private void saveToolStripMenuItem_Click(object sender, EventArgs e)
     {
+      Save();
+    }
+
+    private void viewReportToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      string path = Properties.Settings.Default.savePath.ToString();
+      if (File.Exists(path))
+        System.Diagnostics.Process.Start("notepad", path);
+      else
+        MessageBox.Show(path + " does not exist", "Invalid File Name",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+
+    private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show("Created By Jonas Smith. If you have any questions or ideas to make this" +
+                      " program better please email me at smithjon@carthagetigers.org", "About ");
+    }
+
+    #endregion
+
+    public const int WM_NCLBUTTONDOWN = 0xA1;
+    public const int HT_CAPTION = 0x2;
+
+    [DllImportAttribute("user32.dll")]
+    public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+    [DllImportAttribute("user32.dll")]
+    public static extern bool ReleaseCapture();
+
+    private void panel1_MouseMove(object sender, MouseEventArgs e)
+    {
+      if (e.Button == MouseButtons.Left)
+      {
+        ReleaseCapture();
+        SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+      }
+    }
+
+    private void closeButton_Click(object sender, EventArgs e)
+    {
+      Application.Exit();
+    }
+
+    private void newTripButton_Click(object sender, EventArgs e)
+    {
+      newTripPanel.Visible = true;
+      ReportPanel.Visible = false;
+      newTripPanel.Dock = DockStyle.Fill;
+    }
+
+    private void viewReportButton_Click(object sender, EventArgs e)
+    {
+      newTripPanel.Visible = false;
+      ReportPanel.Visible = true;
+      ReportPanel.Dock = DockStyle.Fill;
+
+      reportBox.Text = File.ReadAllText(Properties.Settings.Default.savePath);
+    }
+
+    private void Save()
+    {
       // Create StreamWriter
       StreamWriter sw;
 
@@ -293,83 +359,22 @@ namespace Mileage
         {
           sw.Write(tripList[i].DateCreated); sw.Write(" ,");
           sw.Write(tripList[i].Destination); sw.Write(" ,");
-          sw.Write(tripList[i].TripDist);    sw.WriteLine();
+          sw.Write(tripList[i].TripDist); sw.WriteLine();
         }
         tripList.Clear();
         sw.Close();
       }
     }
 
-    private void viewReportToolStripMenuItem_Click(object sender, EventArgs e)
+    private void saveButton_Click(object sender, EventArgs e)
     {
-      string path = Properties.Settings.Default.savePath.ToString();
-      if (File.Exists(path))
-        System.Diagnostics.Process.Start("notepad", path);
-      else
-        MessageBox.Show(path + " does not exist", "Invalid File Name",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+      Save();
     }
 
-    private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      MessageBox.Show("Created By Jonas Smith. If you have any questions or ideas to make this" +
-                      " program better please email me at smithjon@carthagetigers.org", "About ");
-    }
-
-    #endregion
-
-    private void settingsToolStripMenuItem_Click_1(object sender, EventArgs e)
+    private void settingsButton_Click(object sender, EventArgs e)
     {
       Settings setting = new Settings();
       setting.Show();
-    }
-
-    private void mileageForm_Load(object sender, EventArgs e)
-    {
-
-    }
-
-    public const int WM_NCLBUTTONDOWN = 0xA1;
-    public const int HT_CAPTION = 0x2;
-
-    [DllImportAttribute("user32.dll")]
-    public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-    [DllImportAttribute("user32.dll")]
-    public static extern bool ReleaseCapture();
-
-    private void panel1_MouseMove(object sender, MouseEventArgs e)
-    {
-      if (e.Button == MouseButtons.Left)
-      {
-        ReleaseCapture();
-        SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-      }
-    }
-
-    private void closeButton_Click(object sender, EventArgs e)
-    {
-      Application.Exit();
-    }
-
-    private void newTripButton_Click(object sender, EventArgs e)
-    {
-      newTripPanel.Visible = true;
-      ReportPanel.Visible = false;
-      newTripPanel.Dock = DockStyle.Fill;
-    }
-
-    private void viewReportButton_Click(object sender, EventArgs e)
-    {
-      newTripPanel.Visible = false;
-      ReportPanel.Visible = true;
-      ReportPanel.Dock = DockStyle.Fill;
-
-      reportBox.Text = File.ReadAllText(Properties.Settings.Default.savePath);
     }
   }
   #region Trip-Class

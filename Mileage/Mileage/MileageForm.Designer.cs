@@ -28,15 +28,14 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.tripDGV = new System.Windows.Forms.DataGridView();
       this.tripCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.travelCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.viewReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,12 +58,14 @@
       this.closeButton = new System.Windows.Forms.Button();
       this.rightPanel = new System.Windows.Forms.Panel();
       this.newTripPanel = new System.Windows.Forms.Panel();
+      this.saveButton = new System.Windows.Forms.Button();
       this.ReportPanel = new System.Windows.Forms.Panel();
       this.reportBox = new System.Windows.Forms.TextBox();
       this.leftPanel = new System.Windows.Forms.Panel();
+      this.createdByLabel = new System.Windows.Forms.Label();
       this.viewReportButton = new System.Windows.Forms.Button();
       this.newTripButton = new System.Windows.Forms.Button();
-      this.createdByLabel = new System.Windows.Forms.Label();
+      this.settingsButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.tripDGV)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -79,14 +80,14 @@
       this.tripDGV.AllowUserToAddRows = false;
       this.tripDGV.AllowUserToResizeColumns = false;
       this.tripDGV.AllowUserToResizeRows = false;
-      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.tripDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.tripDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.tripDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.tripDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tripCol,
@@ -94,22 +95,22 @@
       this.tripDGV.Location = new System.Drawing.Point(6, 7);
       this.tripDGV.Name = "tripDGV";
       this.tripDGV.ReadOnly = true;
-      dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.tripDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.tripDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
       this.tripDGV.RowHeadersVisible = false;
       this.tripDGV.Size = new System.Drawing.Size(301, 290);
       this.tripDGV.TabIndex = 0;
       // 
       // tripCol
       // 
-      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      this.tripCol.DefaultCellStyle = dataGridViewCellStyle8;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      this.tripCol.DefaultCellStyle = dataGridViewCellStyle2;
       this.tripCol.HeaderText = "Destinations";
       this.tripCol.Name = "tripCol";
       this.tripCol.ReadOnly = true;
@@ -136,33 +137,22 @@
       // fileToolStripMenuItem
       // 
       this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.viewReportToolStripMenuItem});
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
       this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
       this.fileToolStripMenuItem.Text = "File";
       // 
-      // saveToolStripMenuItem
-      // 
-      this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-      this.saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + S";
-      this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-      this.saveToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-      this.saveToolStripMenuItem.Text = "Save";
-      this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-      // 
       // settingsToolStripMenuItem
       // 
       this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-      this.settingsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.settingsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
       this.settingsToolStripMenuItem.Text = "Settings...";
-      this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click_1);
       // 
       // viewReportToolStripMenuItem
       // 
       this.viewReportToolStripMenuItem.Name = "viewReportToolStripMenuItem";
-      this.viewReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.viewReportToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
       this.viewReportToolStripMenuItem.Text = "Edit Report...";
       this.viewReportToolStripMenuItem.Click += new System.EventHandler(this.viewReportToolStripMenuItem_Click);
       // 
@@ -357,6 +347,7 @@
       this.closeButton.Name = "closeButton";
       this.closeButton.Size = new System.Drawing.Size(30, 30);
       this.closeButton.TabIndex = 2;
+      this.closeButton.Text = "X";
       this.closeButton.UseVisualStyleBackColor = true;
       this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
       // 
@@ -374,6 +365,7 @@
       // 
       // newTripPanel
       // 
+      this.newTripPanel.Controls.Add(this.saveButton);
       this.newTripPanel.Controls.Add(this.endButton);
       this.newTripPanel.Controls.Add(this.coBtn);
       this.newTripPanel.Controls.Add(this.msBtn);
@@ -395,6 +387,16 @@
       this.newTripPanel.Size = new System.Drawing.Size(552, 303);
       this.newTripPanel.TabIndex = 18;
       this.newTripPanel.Visible = false;
+      // 
+      // saveButton
+      // 
+      this.saveButton.Location = new System.Drawing.Point(432, 244);
+      this.saveButton.Name = "saveButton";
+      this.saveButton.Size = new System.Drawing.Size(106, 39);
+      this.saveButton.TabIndex = 16;
+      this.saveButton.Text = "Save Trips";
+      this.saveButton.UseVisualStyleBackColor = true;
+      this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
       // 
       // ReportPanel
       // 
@@ -421,11 +423,22 @@
       this.leftPanel.Controls.Add(this.createdByLabel);
       this.leftPanel.Controls.Add(this.viewReportButton);
       this.leftPanel.Controls.Add(this.newTripButton);
+      this.leftPanel.Controls.Add(this.settingsButton);
       this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
       this.leftPanel.Location = new System.Drawing.Point(0, 0);
       this.leftPanel.Name = "leftPanel";
       this.leftPanel.Size = new System.Drawing.Size(153, 337);
       this.leftPanel.TabIndex = 17;
+      // 
+      // createdByLabel
+      // 
+      this.createdByLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.createdByLabel.Location = new System.Drawing.Point(0, 280);
+      this.createdByLabel.Name = "createdByLabel";
+      this.createdByLabel.Size = new System.Drawing.Size(151, 21);
+      this.createdByLabel.TabIndex = 2;
+      this.createdByLabel.Text = "Created by : Jonas Smith";
+      this.createdByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
       // viewReportButton
       // 
@@ -449,15 +462,16 @@
       this.newTripButton.UseVisualStyleBackColor = true;
       this.newTripButton.Click += new System.EventHandler(this.newTripButton_Click);
       // 
-      // createdByLabel
+      // settingsButton
       // 
-      this.createdByLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.createdByLabel.Location = new System.Drawing.Point(0, 301);
-      this.createdByLabel.Name = "createdByLabel";
-      this.createdByLabel.Size = new System.Drawing.Size(151, 34);
-      this.createdByLabel.TabIndex = 2;
-      this.createdByLabel.Text = "Created by : Jonas Smith";
-      this.createdByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.settingsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.settingsButton.Location = new System.Drawing.Point(0, 301);
+      this.settingsButton.Name = "settingsButton";
+      this.settingsButton.Size = new System.Drawing.Size(151, 34);
+      this.settingsButton.TabIndex = 3;
+      this.settingsButton.Text = "Settings";
+      this.settingsButton.UseVisualStyleBackColor = true;
+      this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
       // 
       // mileageForm
       // 
@@ -470,7 +484,6 @@
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "mileageForm";
       this.Text = "Mileage";
-      this.Load += new System.EventHandler(this.mileageForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.tripDGV)).EndInit();
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
@@ -507,7 +520,6 @@
     private System.Windows.Forms.Button echBtn;
     private System.Windows.Forms.ToolStripMenuItem viewReportToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     private System.Windows.Forms.DataGridViewTextBoxColumn tripCol;
     private System.Windows.Forms.DataGridViewTextBoxColumn travelCol;
     private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
@@ -521,6 +533,8 @@
     private System.Windows.Forms.Panel ReportPanel;
     private System.Windows.Forms.TextBox reportBox;
     private System.Windows.Forms.Label createdByLabel;
+    private System.Windows.Forms.Button saveButton;
+    private System.Windows.Forms.Button settingsButton;
   }
 }
 
