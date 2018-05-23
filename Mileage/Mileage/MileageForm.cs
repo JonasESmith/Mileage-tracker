@@ -15,6 +15,7 @@ namespace Mileage
 {
   public partial class mileageForm : Form
   {
+    public int topMargin = 10;
     public List<Trip>   tripList = new List<Trip>();
     public List<string> destinationList = new List<string>();
 
@@ -43,6 +44,17 @@ namespace Mileage
     {
       closeButton.BackColor = Color.FromArgb(244, 83, 66);
       closeButton.FlatAppearance.BorderColor = Color.FromArgb(244, 83, 66);
+
+      newTripButton.FlatAppearance.BorderColor = SystemColors.Control;
+      editReportButton.FlatAppearance.BorderColor = SystemColors.Control;
+      viewReportButton.FlatAppearance.BorderColor = SystemColors.Control;
+      settingsButton.FlatAppearance.BorderColor = SystemColors.Control;
+
+      customDGVPanel.AutoScroll = false;
+      customDGVPanel.HorizontalScroll.Enabled = false;
+      customDGVPanel.HorizontalScroll.Visible = false;
+      customDGVPanel.HorizontalScroll.Maximum = 0;
+      customDGVPanel.AutoScroll = true;
     }
 
     #region Button Events & Calculations
@@ -169,6 +181,15 @@ namespace Mileage
 
       // turns off all buttons after trip has been finished. 
       enableBtns(false);
+
+      if(tripList.Count != 0)
+      {
+        saveButton.Enabled = true;
+      }
+      else
+      {
+        saveButton.Enabled = false;
+      }
     }
 
     private void finishTrip()
@@ -228,12 +249,30 @@ namespace Mileage
 
     private void updateDGV(double distance)
     {
-      // add new row after trip was created
-      tripDGV.Rows.Add();
+      int distBTNWidth = customDGVPanel.Width / 3;
+      int buttonWidth = customDGVPanel.Width - distBTNWidth;
+      int left = 10;
 
-      // populate rows/columns with data
-      tripDGV.Rows[tripDGV.Rows.Count - 1].Cells[0].Value = tripList[tripList.Count-1].Destination;
-      tripDGV.Rows[tripDGV.Rows.Count - 1].Cells[1].Value = distance;
+      Button button = new Button();
+      button.Left = left;
+      button.Top = topMargin;
+      button.Width = buttonWidth - 15;
+      button.Height = 30;
+      button.Text = tripList[tripList.Count - 1].Destination;
+      button.TextAlign = ContentAlignment.MiddleLeft;
+      customDGVPanel.Controls.Add(button);
+      ToolTip tolltip = new ToolTip();
+      tolltip.SetToolTip(button, tripList[tripList.Count - 1].Destination);
+
+
+      Button distBTN = new Button();
+      distBTN.Left = left + button.Width;
+      distBTN.Top = topMargin;
+      distBTN.Width = distBTNWidth - 10;
+      distBTN.Height = 30;
+      distBTN.Text = distance.ToString() + " miles";
+      customDGVPanel.Controls.Add(distBTN);
+      topMargin += distBTN.Height + 2;
     }
 
     private void mileageForm_Click(object sender, EventArgs e)
@@ -243,32 +282,6 @@ namespace Mileage
 
       // add button text to class wide list
       destinationList.Add(btnText);
-    }
-
-    private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      Save();
-    }
-
-    private void viewReportToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      string path = Properties.Settings.Default.savePath.ToString();
-      if (File.Exists(path))
-        System.Diagnostics.Process.Start("notepad", path);
-      else
-        MessageBox.Show(path + " does not exist", "Invalid File Name",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-    }
-
-    private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      MessageBox.Show("Created By Jonas Smith. If you have any questions or ideas to make this" +
-                      " program better please email me at smithjon@carthagetigers.org", "About ");
     }
 
     #endregion
@@ -369,12 +382,23 @@ namespace Mileage
     private void saveButton_Click(object sender, EventArgs e)
     {
       Save();
+      saveButton.Enabled = false;
     }
 
     private void settingsButton_Click(object sender, EventArgs e)
     {
       Settings setting = new Settings();
       setting.Show();
+    }
+
+    private void editReportButton_Click(object sender, EventArgs e)
+    {
+      string path = Properties.Settings.Default.savePath.ToString();
+      if (File.Exists(path))
+        System.Diagnostics.Process.Start("notepad", path);
+      else
+        MessageBox.Show(path + " does not exist", "Invalid File Name",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
   }
   #region Trip-Class
