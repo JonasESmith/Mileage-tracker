@@ -297,7 +297,7 @@ namespace Mileage
       ToolTip tolltip = new ToolTip();
       tolltip.SetToolTip(button, tripList[tripList.Count - 1].Destination);
       button.FlatStyle = FlatStyle.Flat;
-      button.FlatAppearance.BorderColor = Color.White;
+      button.FlatAppearance.BorderColor = Color.FromArgb(0, 188, 212);
       button.BackColor = Color.FromArgb(0, 188, 212);
 
 
