@@ -274,14 +274,12 @@
       this.newTripPanel.Name = "newTripPanel";
       this.newTripPanel.Size = new System.Drawing.Size(552, 327);
       this.newTripPanel.TabIndex = 18;
-      this.newTripPanel.Visible = false;
       // 
       // customDGVPanel
       // 
-      this.customDGVPanel.Dock = System.Windows.Forms.DockStyle.Left;
-      this.customDGVPanel.Location = new System.Drawing.Point(0, 0);
+      this.customDGVPanel.Location = new System.Drawing.Point(0, 5);
       this.customDGVPanel.Name = "customDGVPanel";
-      this.customDGVPanel.Size = new System.Drawing.Size(306, 327);
+      this.customDGVPanel.Size = new System.Drawing.Size(306, 321);
       this.customDGVPanel.TabIndex = 17;
       // 
       // saveButton
@@ -338,6 +336,7 @@
       this.editReportButton.Size = new System.Drawing.Size(151, 39);
       this.editReportButton.TabIndex = 4;
       this.editReportButton.Text = "Edit Report";
+      this.editReportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.editReportButton.UseVisualStyleBackColor = true;
       this.editReportButton.Click += new System.EventHandler(this.editReportButton_Click);
       // 
@@ -359,7 +358,8 @@
       this.viewReportButton.Name = "viewReportButton";
       this.viewReportButton.Size = new System.Drawing.Size(151, 39);
       this.viewReportButton.TabIndex = 1;
-      this.viewReportButton.Text = "View Repot";
+      this.viewReportButton.Text = "View Report";
+      this.viewReportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.viewReportButton.UseVisualStyleBackColor = true;
       this.viewReportButton.Click += new System.EventHandler(this.viewReportButton_Click);
       // 
@@ -372,6 +372,7 @@
       this.newTripButton.Size = new System.Drawing.Size(151, 39);
       this.newTripButton.TabIndex = 0;
       this.newTripButton.Text = "New Trip";
+      this.newTripButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.newTripButton.UseVisualStyleBackColor = true;
       this.newTripButton.Click += new System.EventHandler(this.newTripButton_Click);
       // 

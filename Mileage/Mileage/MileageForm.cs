@@ -15,7 +15,7 @@ namespace Mileage
 {
   public partial class mileageForm : Form
   {
-    public int topMargin = 10;
+    public int topMargin = 0;
     public List<Trip>   tripList = new List<Trip>();
     public List<string> destinationList = new List<string>();
 
@@ -45,16 +45,43 @@ namespace Mileage
       closeButton.BackColor = Color.FromArgb(244, 83, 66);
       closeButton.FlatAppearance.BorderColor = Color.FromArgb(244, 83, 66);
 
-      newTripButton.FlatAppearance.BorderColor = SystemColors.Control;
-      editReportButton.FlatAppearance.BorderColor = SystemColors.Control;
-      viewReportButton.FlatAppearance.BorderColor = SystemColors.Control;
-      settingsButton.FlatAppearance.BorderColor = SystemColors.Control;
+      newTripButton.Font = new Font(newTripButton.Font.Name, 12, newTripButton.Font.Style);
+      newTripButton.FlatAppearance.BorderColor    = Color.FromArgb(211, 47, 47);
+      newTripButton.BackColor = Color.FromArgb(211, 47, 47);
+      newTripButton.BackColorChanged += (s, e) => {
+        newTripButton.FlatAppearance.MouseOverBackColor = newTripButton.BackColor;
+      };
+
+
+      viewReportButton.FlatAppearance.BorderColor = Color.FromArgb(244, 67, 54);
+      viewReportButton.BackColor = Color.FromArgb(244, 67, 54);
+      viewReportButton.Font = new Font(newTripButton.Font.Name, 12, newTripButton.Font.Style);
+      viewReportButton.BackColorChanged += (s, e) => {
+        viewReportButton.FlatAppearance.MouseOverBackColor = viewReportButton.BackColor;
+      };
+
+      editReportButton.FlatAppearance.BorderColor = Color.FromArgb(255, 82, 82);
+      editReportButton.Font = new Font(newTripButton.Font.Name, 12, newTripButton.Font.Style);
+      editReportButton.BackColorChanged += (s, e) => {
+        editReportButton.FlatAppearance.MouseOverBackColor = editReportButton.BackColor;
+      };
+
+      settingsButton.FlatAppearance.BorderColor   = Color.FromArgb(244, 67, 54);
+      settingsButton.BackColor = Color.FromArgb(244, 67, 54);
+      settingsButton.TextAlign = ContentAlignment.MiddleCenter;
+      settingsButton.BackColorChanged += (s, e) => {
+        settingsButton.FlatAppearance.MouseOverBackColor = settingsButton.BackColor;
+      };
+
+      leftPanel.BackColor = Color.FromArgb(255, 82, 82);
 
       customDGVPanel.AutoScroll = false;
       customDGVPanel.HorizontalScroll.Enabled = false;
       customDGVPanel.HorizontalScroll.Visible = false;
       customDGVPanel.HorizontalScroll.Maximum = 0;
       customDGVPanel.AutoScroll = true;
+
+      panel1.BackColor = Color.FromArgb(33, 150, 243);
     }
 
     #region Button Events & Calculations
@@ -256,7 +283,7 @@ namespace Mileage
       Button button = new Button();
       button.Left = left;
       button.Top = topMargin;
-      button.Width = buttonWidth - 15;
+      button.Width = buttonWidth - 10;
       button.Height = 30;
       button.Text = tripList[tripList.Count - 1].Destination;
       button.TextAlign = ContentAlignment.MiddleLeft;
@@ -268,7 +295,7 @@ namespace Mileage
       Button distBTN = new Button();
       distBTN.Left = left + button.Width;
       distBTN.Top = topMargin;
-      distBTN.Width = distBTNWidth - 10;
+      distBTN.Width = distBTNWidth - 20;
       distBTN.Height = 30;
       distBTN.Text = distance.ToString() + " miles";
       customDGVPanel.Controls.Add(distBTN);
