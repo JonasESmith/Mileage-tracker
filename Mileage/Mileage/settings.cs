@@ -17,11 +17,17 @@ namespace Mileage
       InitializeComponent();
 
       LoadPath();
+      this.StartPosition = FormStartPosition.CenterScreen;
     }
 
     public void LoadPath()
     {
       filePathBox.Text = Properties.Settings.Default.savePath;
+    }
+
+    private void Settings_Load(object sender, EventArgs e)
+    {
+
     }
   }
 }

@@ -279,7 +279,7 @@
       // 
       this.customDGVPanel.Location = new System.Drawing.Point(0, 5);
       this.customDGVPanel.Name = "customDGVPanel";
-      this.customDGVPanel.Size = new System.Drawing.Size(306, 321);
+      this.customDGVPanel.Size = new System.Drawing.Size(313, 321);
       this.customDGVPanel.TabIndex = 17;
       // 
       // saveButton

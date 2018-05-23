@@ -38,9 +38,9 @@
       this.labelPath.AutoSize = true;
       this.labelPath.Location = new System.Drawing.Point(9, 7);
       this.labelPath.Name = "labelPath";
-      this.labelPath.Size = new System.Drawing.Size(47, 13);
+      this.labelPath.Size = new System.Drawing.Size(151, 13);
       this.labelPath.TabIndex = 0;
-      this.labelPath.Text = "File path";
+      this.labelPath.Text = "path to the mileage storage file";
       // 
       // filePathBox
       // 
@@ -70,6 +70,7 @@
       this.MinimizeBox = false;
       this.Name = "Settings";
       this.Text = "settings";
+      this.Load += new System.EventHandler(this.Settings_Load);
       this.ResumeLayout(false);
       this.PerformLayout();
 
