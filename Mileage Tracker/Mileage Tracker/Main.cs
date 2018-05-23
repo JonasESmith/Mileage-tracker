@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mileage_Tracker
 {
   public partial class MainForm : Form
   {
+    public int numOfDestinations = 23;
+
     public MainForm()
     {
       InitializeComponent();
       LoadThemes();
+      LoadAssets();
+    }
+
+    private void LoadAssets()
+    {
+
     }
 
     private void closeButton_Click(object sender, EventArgs e)
@@ -38,6 +40,9 @@ namespace Mileage_Tracker
       minButton.BackColorChanged += (s, e) => {
         minButton.FlatAppearance.MouseOverBackColor = minButton.BackColor;
       };
+
+      ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+      ToolTip1.SetToolTip(buttonEC, "Early Childhood");
     }
 
     #region Movable Title Bar
@@ -60,21 +65,28 @@ namespace Mileage_Tracker
     public static extern bool ReleaseCapture();
     #endregion
 
-    private void numDestComboBox_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
     private void newTripButton_Click(object sender, EventArgs e)
     {
       mileagePanel.Visible = true;
-      tripSetPanel.Visible = false;
+      mileagePanel.Dock = DockStyle.Fill;
+      //tripSetPanel.Visible = false;
     }
 
     private void tripSetButton_Click(object sender, EventArgs e)
     {
       mileagePanel.Visible = false;
-      tripSetPanel.Visible = true;
+      //tripSetPanel.Visible = true;
+      //tripSetPanel.Dock = DockStyle.Fill;
+    }
+
+    private void startButton_Click(object sender, EventArgs e)
+    {
+      tripButtonPanel.Enabled = true;
+    }
+
+    private void endButton_Click(object sender, EventArgs e)
+    {
+      tripButtonPanel.Enabled = false;
     }
   }
 }
