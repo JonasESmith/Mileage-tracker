@@ -43,6 +43,9 @@ namespace Mileage
 
     public void LoadStyles()
     {
+      newTripPanel.BackColor = Color.FromArgb(102, 102, 102);
+
+
       closeButton.BackColor = Color.FromArgb(244, 83, 66);
       closeButton.FlatAppearance.BorderSize = 0;
       closeButton.BackColorChanged += (s, e) => {
@@ -51,35 +54,22 @@ namespace Mileage
 
       newTripButton.Font = new Font(newTripButton.Font.Name, 13, newTripButton.Font.Style);
       newTripButton.FlatAppearance.BorderSize = 0;
-      newTripButton.ForeColor = Color.FromArgb(221, 221, 221);
-      newTripButton.BackColor = Color.FromArgb(211, 47, 47);
-      newTripButton.BackColorChanged += (s, e) => {
-        newTripButton.FlatAppearance.MouseOverBackColor = newTripButton.BackColor;
-      };
+      newTripButton.ForeColor = SystemColors.AppWorkspace;
 
-      viewReportButton.ForeColor = Color.FromArgb(221, 221, 221);
+      viewReportButton.ForeColor = SystemColors.AppWorkspace;
       viewReportButton.FlatAppearance.BorderSize = 0;
-      viewReportButton.BackColor = Color.FromArgb(244, 67, 54);
       viewReportButton.Font = new Font(newTripButton.Font.Name, 13, newTripButton.Font.Style);
-      viewReportButton.BackColorChanged += (s, e) => {
-        viewReportButton.FlatAppearance.MouseOverBackColor = viewReportButton.BackColor;
-      };
 
-      editReportButton.ForeColor = Color.FromArgb(221, 221, 221);
+      editReportButton.ForeColor = SystemColors.AppWorkspace;
       editReportButton.FlatAppearance.BorderSize = 0;
       editReportButton.Font = new Font(newTripButton.Font.Name, 13, newTripButton.Font.Style);
 
       settingsButton.ForeColor = Color.FromArgb(221, 221, 221);
       settingsButton.FlatAppearance.BorderSize = 0;
-      settingsButton.BackColor = Color.FromArgb(244, 67, 54);
-      settingsButton.TextAlign = ContentAlignment.MiddleCenter;
       settingsButton.TextAlign = ContentAlignment.MiddleCenter;
       settingsButton.Font = new Font(newTripButton.Font.Name, 11, newTripButton.Font.Style);
-      settingsButton.BackColorChanged += (s, e) => {
-        settingsButton.FlatAppearance.MouseOverBackColor = settingsButton.BackColor;
-      };
 
-      leftPanel.BackColor = Color.FromArgb(255, 82, 82);
+      leftPanel.BackColor = Color.FromArgb(81, 81, 81);
 
       customDGVPanel.AutoScroll = false;
       customDGVPanel.HorizontalScroll.Enabled = false;
@@ -87,7 +77,46 @@ namespace Mileage
       customDGVPanel.HorizontalScroll.Maximum = 0;
       customDGVPanel.AutoScroll = true;
 
-      titleBarPanel.BackColor = Color.FromArgb(33, 150, 243);
+      titleBarPanel.BackColor = Color.FromArgb(40, 40, 40);
+
+      startButton.FlatAppearance.BorderSize = 0;
+      cancleButton.FlatAppearance.BorderSize = 0;
+      officeBtn.FlatAppearance.BorderSize = 0;
+      fvBtn.FlatAppearance.BorderSize = 0;
+      msBtn.FlatAppearance.BorderSize = 0;
+      coBtn.FlatAppearance.BorderSize = 0;
+      stBtn.FlatAppearance.BorderSize = 0;
+      mtBtn.FlatAppearance.BorderSize = 0;
+      jhBtn.FlatAppearance.BorderSize = 0;
+      pvBt.FlatAppearance.BorderSize = 0;
+      imcBtn.FlatAppearance.BorderSize = 0;
+      hsBtn.FlatAppearance.BorderSize = 0;
+      echBtn.FlatAppearance.BorderSize = 0;
+      endButton.FlatAppearance.BorderSize = 0;
+      saveButton.FlatAppearance.BorderSize = 0;
+
+      startButton.BackColor  = Color.FromArgb(54, 99, 40);
+      //startButton.ForeColor = Color.FromArgb(66, 66, 66);
+
+
+      pvBt.BackColor         = Color.FromArgb(81,81,81);
+      fvBtn.BackColor        = Color.FromArgb(81,81,81);
+      msBtn.BackColor        = Color.FromArgb(81,81,81);
+      coBtn.BackColor        = Color.FromArgb(81,81,81);
+      stBtn.BackColor        = Color.FromArgb(81,81,81);
+      mtBtn.BackColor        = Color.FromArgb(81,81,81);
+      jhBtn.BackColor        = Color.FromArgb(81,81,81);
+      hsBtn.BackColor        = Color.FromArgb(81,81,81);
+      imcBtn.BackColor       = Color.FromArgb(81,81,81);
+      echBtn.BackColor       = Color.FromArgb(81,81,81);
+      officeBtn.BackColor    = Color.FromArgb(81,81,81);
+      endButton.BackColor    = Color.FromArgb(81,81,81);
+      saveButton.BackColor   = Color.FromArgb(81,81,81);
+      cancleButton.BackColor = Color.FromArgb(81,81,81);
+
+      startButton.BackColorChanged += (s, e) => {
+        startButton.FlatAppearance.MouseOverBackColor = startButton.BackColor;
+      };
     }
 
     #region Button Events & Calculations
@@ -297,7 +326,8 @@ namespace Mileage
       ToolTip tolltip = new ToolTip();
       tolltip.SetToolTip(button, tripList[tripList.Count - 1].Destination);
       button.FlatStyle = FlatStyle.Flat;
-      button.BackColor = SystemColors.Control;
+      button.BackColor = Color.FromArgb(66, 66, 66);
+      button.ForeColor = SystemColors.Window;
       button.FlatAppearance.BorderSize = 0;
 
 
@@ -308,6 +338,10 @@ namespace Mileage
       distBTN.Height = 30;
       distBTN.Text = distance.ToString() + " miles";
       customDGVPanel.Controls.Add(distBTN);
+      distBTN.FlatStyle = FlatStyle.Flat;
+      distBTN.ForeColor = SystemColors.Window;
+      distBTN.BackColor = Color.FromArgb(66, 66, 66);
+      distBTN.FlatAppearance.BorderSize = 0;
 
 
       topMargin += distBTN.Height + 2;
