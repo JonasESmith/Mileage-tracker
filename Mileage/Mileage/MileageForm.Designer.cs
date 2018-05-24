@@ -82,7 +82,7 @@
       this.endButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.endButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.endButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.endButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.endButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.endButton.Location = new System.Drawing.Point(323, 252);
       this.endButton.Name = "endButton";
       this.endButton.Size = new System.Drawing.Size(164, 50);
@@ -98,7 +98,7 @@
       this.cancleButton.Enabled = false;
       this.cancleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.cancleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cancleButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.cancleButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.cancleButton.Location = new System.Drawing.Point(493, 19);
       this.cancleButton.Name = "cancleButton";
       this.cancleButton.Size = new System.Drawing.Size(50, 50);
@@ -113,7 +113,7 @@
       this.mtBtn.Enabled = false;
       this.mtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.mtBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.mtBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.mtBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.mtBtn.Location = new System.Drawing.Point(437, 131);
       this.mtBtn.Name = "mtBtn";
       this.mtBtn.Size = new System.Drawing.Size(50, 50);
@@ -128,7 +128,7 @@
       this.fvBtn.Enabled = false;
       this.fvBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.fvBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.fvBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.fvBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.fvBtn.Location = new System.Drawing.Point(493, 75);
       this.fvBtn.Name = "fvBtn";
       this.fvBtn.Size = new System.Drawing.Size(50, 50);
@@ -143,7 +143,7 @@
       this.officeBtn.Enabled = false;
       this.officeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.officeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.officeBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.officeBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.officeBtn.Location = new System.Drawing.Point(323, 75);
       this.officeBtn.Name = "officeBtn";
       this.officeBtn.Size = new System.Drawing.Size(108, 50);
@@ -158,7 +158,7 @@
       this.jhBtn.Enabled = false;
       this.jhBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.jhBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.jhBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.jhBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.jhBtn.Location = new System.Drawing.Point(493, 131);
       this.jhBtn.Name = "jhBtn";
       this.jhBtn.Size = new System.Drawing.Size(50, 50);
@@ -173,7 +173,7 @@
       this.coBtn.Enabled = false;
       this.coBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.coBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.coBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.coBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.coBtn.Location = new System.Drawing.Point(323, 131);
       this.coBtn.Name = "coBtn";
       this.coBtn.Size = new System.Drawing.Size(50, 50);
@@ -188,7 +188,7 @@
       this.msBtn.Enabled = false;
       this.msBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.msBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.msBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.msBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.msBtn.Location = new System.Drawing.Point(437, 75);
       this.msBtn.Name = "msBtn";
       this.msBtn.Size = new System.Drawing.Size(50, 50);
@@ -203,7 +203,7 @@
       this.imcBtn.Enabled = false;
       this.imcBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.imcBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.imcBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.imcBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.imcBtn.Location = new System.Drawing.Point(379, 187);
       this.imcBtn.Name = "imcBtn";
       this.imcBtn.Size = new System.Drawing.Size(50, 50);
@@ -218,7 +218,7 @@
       this.stBtn.Enabled = false;
       this.stBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.stBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.stBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.stBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.stBtn.Location = new System.Drawing.Point(379, 131);
       this.stBtn.Name = "stBtn";
       this.stBtn.Size = new System.Drawing.Size(50, 50);
@@ -233,7 +233,7 @@
       this.hsBtn.Enabled = false;
       this.hsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.hsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.hsBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.hsBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.hsBtn.Location = new System.Drawing.Point(437, 187);
       this.hsBtn.Name = "hsBtn";
       this.hsBtn.Size = new System.Drawing.Size(50, 50);
@@ -248,7 +248,7 @@
       this.pvBt.Enabled = false;
       this.pvBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.pvBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.pvBt.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.pvBt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.pvBt.Location = new System.Drawing.Point(323, 187);
       this.pvBt.Name = "pvBt";
       this.pvBt.Size = new System.Drawing.Size(50, 50);
@@ -263,7 +263,7 @@
       this.echBtn.Enabled = false;
       this.echBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.echBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.echBtn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.echBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.echBtn.Location = new System.Drawing.Point(493, 187);
       this.echBtn.Name = "echBtn";
       this.echBtn.Size = new System.Drawing.Size(50, 50);
@@ -343,7 +343,7 @@
       this.saveButton.Enabled = false;
       this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.saveButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+      this.saveButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.saveButton.Location = new System.Drawing.Point(437, 281);
       this.saveButton.Name = "saveButton";
       this.saveButton.Size = new System.Drawing.Size(106, 39);

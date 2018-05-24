@@ -100,20 +100,20 @@ namespace Mileage
       //startButton.ForeColor = Color.FromArgb(66, 66, 66);
 
 
-      pvBt.BackColor         = Color.FromArgb(81,81,81);
-      fvBtn.BackColor        = Color.FromArgb(81,81,81);
-      msBtn.BackColor        = Color.FromArgb(81,81,81);
-      coBtn.BackColor        = Color.FromArgb(81,81,81);
-      stBtn.BackColor        = Color.FromArgb(81,81,81);
-      mtBtn.BackColor        = Color.FromArgb(81,81,81);
-      jhBtn.BackColor        = Color.FromArgb(81,81,81);
-      hsBtn.BackColor        = Color.FromArgb(81,81,81);
-      imcBtn.BackColor       = Color.FromArgb(81,81,81);
-      echBtn.BackColor       = Color.FromArgb(81,81,81);
-      officeBtn.BackColor    = Color.FromArgb(81,81,81);
-      endButton.BackColor    = Color.FromArgb(81,81,81);
-      saveButton.BackColor   = Color.FromArgb(81,81,81);
-      cancleButton.BackColor = Color.FromArgb(81,81,81);
+      pvBt.BackColor         = Color.FromArgb(155,155,155);
+      fvBtn.BackColor        = Color.FromArgb(155,155,155);
+      msBtn.BackColor        = Color.FromArgb(155,155,155);
+      coBtn.BackColor        = Color.FromArgb(155,155,155);
+      stBtn.BackColor        = Color.FromArgb(155,155,155);
+      mtBtn.BackColor        = Color.FromArgb(155,155,155);
+      jhBtn.BackColor        = Color.FromArgb(155,155,155);
+      hsBtn.BackColor        = Color.FromArgb(155,155,155);
+      imcBtn.BackColor       = Color.FromArgb(155,155,155);
+      echBtn.BackColor       = Color.FromArgb(155,155,155);
+      officeBtn.BackColor    = Color.FromArgb(155,155,155);
+      endButton.BackColor    = Color.FromArgb(155,155,155);
+      saveButton.BackColor   = Color.FromArgb(155,155,155);
+      cancleButton.BackColor = Color.FromArgb(155,155,155);
 
       startButton.BackColorChanged += (s, e) => {
         startButton.FlatAppearance.MouseOverBackColor = startButton.BackColor;
@@ -394,7 +394,10 @@ namespace Mileage
       ReportPanel.Visible = true;
       ReportPanel.Dock = DockStyle.Fill;
 
-      reportBox.Text = File.ReadAllText(Properties.Settings.Default.savePath);
+      if (!String.IsNullOrEmpty(Properties.Settings.Default.savePath))
+        reportBox.Text = File.ReadAllText(Properties.Settings.Default.savePath);
+      else
+        reportBox.Text = "No save file associated";
     }
 
     private void Save()
