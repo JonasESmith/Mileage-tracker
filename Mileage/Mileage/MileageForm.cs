@@ -43,8 +43,9 @@ namespace Mileage
 
     public void LoadStyles()
     {
-      newTripPanel.BackColor = Color.FromArgb(102, 102, 102);
+      titleBarPanel.BackColor = Color.FromArgb(40, 40, 40);
 
+      newTripPanel.BackColor = Color.FromArgb(102, 102, 102);
 
       closeButton.BackColor = Color.FromArgb(244, 83, 66);
       closeButton.FlatAppearance.BorderSize = 0;
@@ -71,29 +72,29 @@ namespace Mileage
 
       leftPanel.BackColor = Color.FromArgb(81, 81, 81);
 
-      customDGVPanel.AutoScroll = false;
+      // Bellow adds a scroll bar to the view report "tab"
+      customDGVPanel.AutoScroll               = false;
       customDGVPanel.HorizontalScroll.Enabled = false;
       customDGVPanel.HorizontalScroll.Visible = false;
       customDGVPanel.HorizontalScroll.Maximum = 0;
-      customDGVPanel.AutoScroll = true;
+      customDGVPanel.AutoScroll               = true;
 
-      titleBarPanel.BackColor = Color.FromArgb(40, 40, 40);
 
-      startButton.FlatAppearance.BorderSize = 0;
+      pvBt.FlatAppearance.BorderSize         = 0;
+      fvBtn.FlatAppearance.BorderSize        = 0;
+      msBtn.FlatAppearance.BorderSize        = 0;
+      coBtn.FlatAppearance.BorderSize        = 0;
+      stBtn.FlatAppearance.BorderSize        = 0;
+      mtBtn.FlatAppearance.BorderSize        = 0;
+      jhBtn.FlatAppearance.BorderSize        = 0;
+      hsBtn.FlatAppearance.BorderSize        = 0;
+      echBtn.FlatAppearance.BorderSize       = 0;
+      imcBtn.FlatAppearance.BorderSize       = 0;
+      endButton.FlatAppearance.BorderSize    = 0;
+      officeBtn.FlatAppearance.BorderSize    = 0;
+      saveButton.FlatAppearance.BorderSize   = 0;
+      startButton.FlatAppearance.BorderSize  = 0;
       cancleButton.FlatAppearance.BorderSize = 0;
-      officeBtn.FlatAppearance.BorderSize = 0;
-      fvBtn.FlatAppearance.BorderSize = 0;
-      msBtn.FlatAppearance.BorderSize = 0;
-      coBtn.FlatAppearance.BorderSize = 0;
-      stBtn.FlatAppearance.BorderSize = 0;
-      mtBtn.FlatAppearance.BorderSize = 0;
-      jhBtn.FlatAppearance.BorderSize = 0;
-      pvBt.FlatAppearance.BorderSize = 0;
-      imcBtn.FlatAppearance.BorderSize = 0;
-      hsBtn.FlatAppearance.BorderSize = 0;
-      echBtn.FlatAppearance.BorderSize = 0;
-      endButton.FlatAppearance.BorderSize = 0;
-      saveButton.FlatAppearance.BorderSize = 0;
 
       startButton.BackColor  = Color.FromArgb(54, 99, 40);
       //startButton.ForeColor = Color.FromArgb(66, 66, 66);
