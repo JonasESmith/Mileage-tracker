@@ -19,6 +19,15 @@ namespace Mileage
     public List<Trip>   tripList = new List<Trip>();
     public List<string> destinationList = new List<string>();
 
+    public Color titleColor;
+    public Color tripPanelColor;
+    public Color closeButtonColor;
+    public Color leftPanelColor;
+    public Color startButtonColor;
+    public Color buttonColor;
+    public Color disabledButtonColor;
+    public Color endButtonColor;
+
     #region Mileage Matrix 
 
     double[,] mileageMatrix = {   { 0  , 2.4, 1  , 1.6, 3.9, 1.2, 2.7, 1.8, 2.8, 1.9, 2.4},
@@ -38,16 +47,43 @@ namespace Mileage
     {
       StartPosition = FormStartPosition.CenterScreen;
       InitializeComponent();
+      LoadColors();
       LoadStyles();
+    }
+
+    private void LoadColors()
+    {
+      if(Properties.Settings.Default.Theme)
+      {
+        titleColor = Color.FromArgb(40, 40, 40);
+        tripPanelColor = Color.FromArgb(250, 250, 250);
+        closeButtonColor = Color.FromArgb(244, 83, 66);
+        leftPanelColor = Color.FromArgb(81, 81, 81);
+        startButtonColor = Color.FromArgb(0, 175, 65);
+        buttonColor = Color.FromArgb(155, 155, 155);
+        disabledButtonColor = Color.FromArgb(100, 100, 100);
+        endButtonColor = Color.FromArgb(218, 42, 0);
+      }
+      else
+      {
+        titleColor = Color.FromArgb(3, 88, 138);
+        tripPanelColor = Color.FromArgb(250, 250, 250);
+        closeButtonColor = Color.FromArgb(244, 83, 66);
+        leftPanelColor = Color.FromArgb(4, 98, 153);
+        startButtonColor = Color.FromArgb(0, 175, 65);
+        buttonColor = Color.FromArgb(155, 155, 155);
+        disabledButtonColor = Color.FromArgb(100, 100, 100);
+        endButtonColor = Color.FromArgb(218, 42, 0);
+      }
     }
 
     public void LoadStyles()
     {
-      titleBarPanel.BackColor = Color.FromArgb(40, 40, 40);
+      titleBarPanel.BackColor = titleColor;
 
-      newTripPanel.BackColor = Color.FromArgb(102, 102, 102);
+      newTripPanel.BackColor = tripPanelColor;
 
-      closeButton.BackColor = Color.FromArgb(244, 83, 66);
+      closeButton.BackColor = closeButtonColor;
       closeButton.FlatAppearance.BorderSize = 0;
       closeButton.BackColorChanged += (s, e) => {
         closeButton.FlatAppearance.MouseOverBackColor = closeButton.BackColor;
@@ -55,22 +91,25 @@ namespace Mileage
 
       newTripButton.Font = new Font(newTripButton.Font.Name, 13, newTripButton.Font.Style);
       newTripButton.FlatAppearance.BorderSize = 0;
-      newTripButton.ForeColor = SystemColors.AppWorkspace;
+      newTripButton.ForeColor = Color.White;
 
-      viewReportButton.ForeColor = SystemColors.AppWorkspace;
+      viewReportButton.ForeColor = Color.White;
       viewReportButton.FlatAppearance.BorderSize = 0;
       viewReportButton.Font = new Font(newTripButton.Font.Name, 13, newTripButton.Font.Style);
 
-      editReportButton.ForeColor = SystemColors.AppWorkspace;
+      editReportButton.ForeColor = Color.White;
       editReportButton.FlatAppearance.BorderSize = 0;
       editReportButton.Font = new Font(newTripButton.Font.Name, 13, newTripButton.Font.Style);
 
-      settingsButton.ForeColor = Color.FromArgb(221, 221, 221);
+      settingsButton.ForeColor = Color.White;
       settingsButton.FlatAppearance.BorderSize = 0;
-      settingsButton.TextAlign = ContentAlignment.MiddleCenter;
-      settingsButton.Font = new Font(newTripButton.Font.Name, 11, newTripButton.Font.Style);
+      settingsButton.TextAlign = ContentAlignment.MiddleLeft;
+      settingsButton.Font = new Font(newTripButton.Font.Name, 13, newTripButton.Font.Style);
 
-      leftPanel.BackColor = Color.FromArgb(81, 81, 81);
+      createdByLabel.ForeColor = Color.White;
+      createdByLabel.TextAlign = ContentAlignment.MiddleLeft;
+
+      leftPanel.BackColor = leftPanelColor;
 
       // Bellow adds a scroll bar to the view report "tab"
       customDGVPanel.AutoScroll               = false;
@@ -96,28 +135,17 @@ namespace Mileage
       startButton.FlatAppearance.BorderSize  = 0;
       cancleButton.FlatAppearance.BorderSize = 0;
 
-      startButton.BackColor  = Color.FromArgb(54, 99, 40);
-      //startButton.ForeColor = Color.FromArgb(66, 66, 66);
+      startButton.BackColor  = startButtonColor;
+      startButton.ForeColor  = Color.White;
 
-
-      pvBt.BackColor         = Color.FromArgb(155,155,155);
-      fvBtn.BackColor        = Color.FromArgb(155,155,155);
-      msBtn.BackColor        = Color.FromArgb(155,155,155);
-      coBtn.BackColor        = Color.FromArgb(155,155,155);
-      stBtn.BackColor        = Color.FromArgb(155,155,155);
-      mtBtn.BackColor        = Color.FromArgb(155,155,155);
-      jhBtn.BackColor        = Color.FromArgb(155,155,155);
-      hsBtn.BackColor        = Color.FromArgb(155,155,155);
-      imcBtn.BackColor       = Color.FromArgb(155,155,155);
-      echBtn.BackColor       = Color.FromArgb(155,155,155);
-      officeBtn.BackColor    = Color.FromArgb(155,155,155);
-      endButton.BackColor    = Color.FromArgb(155,155,155);
-      saveButton.BackColor   = Color.FromArgb(155,155,155);
-      cancleButton.BackColor = Color.FromArgb(155,155,155);
+      endButton.BackColor = endButtonColor;
+      endButton.ForeColor = Color.White;
 
       startButton.BackColorChanged += (s, e) => {
         startButton.FlatAppearance.MouseOverBackColor = startButton.BackColor;
       };
+
+      enableBtns(false);
     }
 
     #region Button Events & Calculations
@@ -131,6 +159,19 @@ namespace Mileage
         endButton.Visible  = true;
         endButton.Enabled  = true;
         endButton.Location = startButton.Location;
+
+        pvBt.BackColor = buttonColor;
+        fvBtn.BackColor = buttonColor;
+        msBtn.BackColor = buttonColor;
+        coBtn.BackColor = buttonColor;
+        stBtn.BackColor = buttonColor;
+        mtBtn.BackColor = buttonColor;
+        jhBtn.BackColor = buttonColor;
+        hsBtn.BackColor = buttonColor;
+        imcBtn.BackColor = buttonColor;
+        echBtn.BackColor = buttonColor;
+        officeBtn.BackColor = buttonColor;
+        cancleButton.BackColor = buttonColor;
 
         cancleButton.Enabled = true;
         startButton.Enabled  = false;
@@ -149,7 +190,20 @@ namespace Mileage
       else
       {
         startButton.Enabled = true;
-        startButton.Visible = true; 
+        startButton.Visible = true;
+
+        pvBt.BackColor         = disabledButtonColor;
+        fvBtn.BackColor        = disabledButtonColor;
+        msBtn.BackColor        = disabledButtonColor;
+        coBtn.BackColor        = disabledButtonColor;
+        stBtn.BackColor        = disabledButtonColor;
+        mtBtn.BackColor        = disabledButtonColor;
+        jhBtn.BackColor        = disabledButtonColor;
+        hsBtn.BackColor        = disabledButtonColor;
+        imcBtn.BackColor       = disabledButtonColor;
+        echBtn.BackColor       = disabledButtonColor;
+        officeBtn.BackColor    = disabledButtonColor;
+        cancleButton.BackColor = disabledButtonColor;
 
         endButton.Visible    = false;
         endButton.Enabled    = false;
@@ -248,10 +302,12 @@ namespace Mileage
       if(tripList.Count != 0)
       {
         saveButton.Enabled = true;
+        saveButton.BackColor = startButtonColor;
       }
       else
       {
         saveButton.Enabled = false;
+        saveButton.BackColor = buttonColor;
       }
     }
 
@@ -459,12 +515,20 @@ namespace Mileage
     {
       Save();
       saveButton.Enabled = false;
+      saveButton.BackColor = buttonColor;
     }
 
     private void settingsButton_Click(object sender, EventArgs e)
     {
       Settings setting = new Settings();
+      setting.FormClosed += Setting_FormClosed;
       setting.Show();
+    }
+
+    private void Setting_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      LoadColors();
+      LoadStyles();
     }
 
     private void editReportButton_Click(object sender, EventArgs e)

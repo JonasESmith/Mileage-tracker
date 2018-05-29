@@ -16,6 +16,8 @@ namespace Mileage
     {
       InitializeComponent();
 
+      darkTheme.Checked = Properties.Settings.Default.Theme;
+
       LoadPath();
       this.StartPosition = FormStartPosition.CenterScreen;
     }
@@ -28,6 +30,22 @@ namespace Mileage
     private void Settings_Load(object sender, EventArgs e)
     {
 
+    }
+
+    private void darkTheme_Click(object sender, EventArgs e)
+    {
+      bool userSet = Properties.Settings.Default.Theme;
+      if (userSet)
+      {
+        userSet = false;
+      }
+      else
+      {
+        userSet = true;
+      }
+
+      Properties.Settings.Default.Theme = userSet;
+      Properties.Settings.Default.Save();
     }
   }
 }
