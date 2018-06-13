@@ -47,5 +47,11 @@ namespace Mileage
       Properties.Settings.Default.Theme = userSet;
       Properties.Settings.Default.Save();
     }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+      Properties.Settings.Default.savePath = filePathBox.Text;
+      Properties.Settings.Default.Save();
+    }
   }
 }

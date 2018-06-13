@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mileageForm));
       this.startButton = new System.Windows.Forms.Button();
       this.endButton = new System.Windows.Forms.Button();
       this.cancleButton = new System.Windows.Forms.Button();
@@ -455,6 +456,7 @@
       this.Controls.Add(this.rightPanel);
       this.Controls.Add(this.titleBarPanel);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "mileageForm";
       this.Text = "Mileage";
       this.titleBarPanel.ResumeLayout(false);

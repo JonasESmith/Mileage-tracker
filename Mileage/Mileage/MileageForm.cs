@@ -347,7 +347,7 @@ namespace Mileage
       string firstPos;
       string secondPos;
 
-      for (int i = 0; i <= destinationList.Count - 2; i++)
+      for (int i = 0; i < destinationList.Count - 1; i++)
       {
         firstPos = destinationList.ElementAt(i);
         secondPos = destinationList.ElementAt(i + 1);
