@@ -1,5 +1,5 @@
 # Mileage-tracker
-An application I created to help coworkers better track mileage and do less paper work at the end of each month.
+An application I created to help coworkers at the Carthage R9 School district better track mileage and do less paper work at the end of each month.
 
 # Mileage windows
 <h2> Dark/Light Themes </h2>
